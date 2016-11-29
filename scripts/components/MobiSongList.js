@@ -46,7 +46,7 @@ class MobileSongList extends Component {
   renderSpinner() {
     const { playlist, playlists } = this.props;
     if (!(playlist in playlists) || playlists[playlist].isFetching) {
-      return <Spinner />;
+      return <Loader />;
     }
 
     return null;

@@ -12,7 +12,7 @@ const propTypes = {
 class Toolbar extends Component {
   renderGenres() {
     const { dispatch, playlist , path} = this.props;
-    console.log("Path",path);
+
     const genre = playlist.split(' - ')[0];
 
     return GENRES.map(g => {
