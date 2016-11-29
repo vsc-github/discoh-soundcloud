@@ -1,0 +1,10 @@
+.songs-row {
+    & + .songs-row {
+        margin-top: 20px;
+    }
+}
+
+.songs-container{
+    width: 95%;
+    margin: 0 auto;
+}
