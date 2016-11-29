@@ -14,7 +14,7 @@ class Nav extends Component {
 
     renderGithubFork() {
         return (
-            <a href="www.github.com" target="_blank" className="github">
+            <a href="https://github.com/vsc-github/discoh-soundcloud" target="_blank" className="github">
                  <span>Fork on github </span><img src="https://i.imgsafe.org/afd4663170.png" alt=""/>
            </a>
         );
