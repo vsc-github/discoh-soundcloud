@@ -6,6 +6,11 @@ import { CHANGE_TYPES } from '../constants/SongConstants';
 import { formatStreamUrl } from '../utils/FormatUtils';
 import { getImageUrl } from '../utils/SongUtils';
 
+import Forward from 'react-icons/lib/io/ios-fastforward';
+import Backward from 'react-icons/lib/io/ios-rewind';
+import Pause from 'react-icons/lib/io/ios-pause';
+import Play from 'react-icons/lib/io/ios-play';
+
 const propTypes = {
   dispatch: PropTypes.func.isRequired,
   player: PropTypes.object.isRequired,
@@ -27,6 +32,7 @@ class Player extends Component {
     this.handlePause = this.handlePause.bind(this);
 
     this.togglePlay = this.togglePlay.bind(this);
+    this.renderPlayPauseButton = this.renderPlayPauseButton.bind(this);
 
     this.state = {
       activePlaylistIndex: null
@@ -105,14 +111,19 @@ class Player extends Component {
     }
   }
 
+    renderPlayPauseButton(){
+        const {isPlaying} = this.props.player;
+        if(isPlaying) return <Pause color="#ccc" size={20} />
+        else return <Play color="#ccc" size={20} />
+    }
+
   render() {
     const { dispatch, isMobile,  player, playingSongId, songs, users } = this.props;
     const { isPlaying } = player;
     const song = songs[playingSongId];
     const user = users[song.user_id];
     const prevFunc = this.changeSong.bind(this, CHANGE_TYPES.PREV);
-    const nextFunc = this.changeSong.bind(this, CHANGE_TYPES.NEXT
-    );
+    const nextFunc = this.changeSong.bind(this, CHANGE_TYPES.NEXT);
 
     return (
       <div className="player">
@@ -138,19 +149,19 @@ class Player extends Component {
                 className="player-button"
                 onClick={prevFunc}
               >
-                <i className="icon ion-ios-rewind" />
+                <Backward color="#ccc" size={20} />
               </div>
               <div
                 className="player-button"
                 onClick={this.togglePlay}
               >
-                <i className={`icon ${(isPlaying ? 'ion-ios-pause' : 'ion-ios-play')}`} />
+                  {this.renderPlayPauseButton()}
               </div>
               <div
                 className="player-button"
                 onClick={nextFunc}
               >
-                <i className="icon ion-ios-fastforward" />
+                  <Forward color="#ccc" size={20} />
               </div>
             </div>
             <div className="player-section">
