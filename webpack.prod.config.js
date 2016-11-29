@@ -9,11 +9,9 @@ module.exports = {
     main: './scripts/main.js',
     vendor: [
       'lodash',
-      'moment',
       'normalizr',
       'react',
       'redux',
-      'soundcloud',
     ],
   },
   output: {
