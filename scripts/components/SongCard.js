@@ -4,6 +4,7 @@ import { formatSongTitle } from '../utils/FormatUtils';
 import { getImageUrl } from '../utils/SongUtils';
 import Play from 'react-icons/lib/fa/play';
 import Playing from 'react-icons/lib/fa/volume-up';
+import Heart from 'react-icons/lib/fa/heart';
 
 class SongCard extends Component {
     constructor() {
@@ -60,11 +61,11 @@ class SongCard extends Component {
                         <div className="song-card-user-username">{user.username} </div>
 
                         <div className="song-card-hearts">
-                            <i className="icon ion-ios-heart"/>
+                            <Heart size={10} color="#949494" style={{"margin-right":"2px"}}/>
                             {song.likes_count}
                         </div>
                         <div className="song-card-plays">
-                            <i className="icon ion-ios-play"/>
+                            <Play size={10} color="#949494"/>
                             {song.playback_count}
                         </div>
 
