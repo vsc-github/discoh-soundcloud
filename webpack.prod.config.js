@@ -27,6 +27,6 @@ module.exports = {
   plugins: [
     ignore,
     new ExtractTextPlugin('./server/public/css/main.css'),
-    new webpack.optimize.CommonsChunkPlugin('vendor', '. /public/js/vendor.js'),
+    new webpack.optimize.CommonsChunkPlugin('vendor', './public/js/vendor.js'),
   ],
 };
