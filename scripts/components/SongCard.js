@@ -61,7 +61,7 @@ class SongCard extends Component {
                         <div className="song-card-user-username">{user.username} </div>
 
                         <div className="song-card-hearts">
-                            <Heart size={10} color="#949494" style={{"margin-right":"2px"}}/>
+                            <Heart size={10} color="#949494" style={{"marginRight":"2px"}}/>
                             {song.likes_count}
                         </div>
                         <div className="song-card-plays">
